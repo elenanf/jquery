@@ -1,0 +1,11 @@
+#square {
+    height: 5rem;
+    width: 5rem;
+    background-color: darksalmon;
+    position: absolute;
+    top: 4rem;
+}
+
+button {
+    margin-top: 1rem;
+}

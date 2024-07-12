@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>    <title>Document</title>
+</head>
+<body>
+<h1>Liste des tâches</h1>
+
+<form id="listInput">
+    <input type="text" placeholder="Entrez une nouvelle tâche"><br>
+    <input type="submit" value="Ajouter">
+</form>
+
+<ul id="list"></ul>
+
+<script>
+    $(document).ready(function() {
+        $("#listInput").submit(function(event) {
+            event.preventDefault();
+            $("#list").append("<li>" + $("#listInput :input").val() + "<button class='listButton'>Terminé</button></li>");
+        });
+
+        $(document).on('click', '.listButton', function() {
+
+            if ($(this).parent().hasClass("completed")) {
+                $(this).parent().removeClass("completed");
+                $(this).parent().children(".deleteButton").remove();
+            } else {
+                $(this).parent().addClass("completed");
+                $(this).parent().append("<button class='deleteButton'>Supprimer</button>");
+            }
+        });
+
+        $(document).on('click', '.deleteButton', function() {
+            $(this).parent().remove();
+        });
+    })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+#wordContainer, #alphabetContainer {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.letter {
+    border-bottom: 1px solid black;
+    width: 2rem;
+    height: 2rem;
+    font-size: 2rem;
+    text-align: center;
+    padding-bottom: 0.5rem;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.none {
+    display: none;
+}
+
+.alphabetLetter {
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+.alphabetLetter:hover {
+    color: cadetblue;
+}
+
+#hp {
+    font-size: 2rem;
+    font-weight: bold;
+}
